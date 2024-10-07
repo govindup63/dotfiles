@@ -15,3 +15,9 @@ keymaps.set("n", "<C-a>", "gg<S-v>G")
 --NewLine Keymaps
 keymaps.set("n", "o", "o<Esc>")
 keymaps.set("n", "O", "O<Esc>")
+
+----tmux keymaps
+--keymaps.set("n", "<C-h>", "<cmd> TmuxNavigateLeft<CR>")
+--keymaps.set("n", "<C-l>", "<cmd> TmuxNavigateRight<CR>")
+--keymaps.set("n", "<C-j>", "<cmd> TmuxNavigateDown<CR>")
+--keymaps.set("n", "<C-k>", "<cmd> TmuxNavigateUp<CR>")
