@@ -119,6 +119,7 @@ alias c='clear'
 alias :q!='exit'
 alias todo='node ~/Desktop/coding/cohort/3-week/cli-todo/index.js'
 alias la='ls -a'
+alias tree='tree -I ".git" -a .'
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
