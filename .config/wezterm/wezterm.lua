@@ -1,5 +1,4 @@
 local wezterm = require("wezterm")
-
 config = wezterm.config_builder()
 
 config = {
