@@ -108,18 +108,18 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 #
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
+# aliases
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias zshedit="nvim ~/dotfiles/.zshrc"
 alias ls='colorls'
 alias python='python3'
 alias :q='exit'
 alias vi='nvim'
 alias c='clear'
-alias :q!='exit'
 alias todo='node ~/Desktop/coding/cohort/3-week/cli-todo/index.js'
 alias la='ls -a'
 alias tree='tree -I ".git" -a .'
+alias nv='NVIM_APPNAME=nvimExample nvim'
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
@@ -209,3 +209,5 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 # Shell Integrations
 eval "$(fzf --zsh)"
 . "/Users/govindpandey/.deno/env"
+export PATH=$PATH:$HOME/.local/opt/go/bin
+export PATH=$PATH:$HOME/go/bin
