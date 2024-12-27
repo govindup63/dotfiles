@@ -10,8 +10,10 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 export LANG=en_AU.UTF-8
 export LC_ALL=en_AU.UTF-8
-export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
@@ -109,6 +111,7 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 # For a full list of active aliases, run `alias`.
 #
 # aliases
+
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias zshedit="nvim ~/dotfiles/.zshrc"
 alias ls='colorls'
@@ -118,8 +121,9 @@ alias vi='nvim'
 alias c='clear'
 alias todo='node ~/Desktop/coding/cohort/3-week/cli-todo/index.js'
 alias la='ls -a'
-alias tree='tree -I ".git" -a .'
+alias tree='tree -I ".git|node_modules" -a .'
 alias nv='NVIM_APPNAME=nvimExample nvim'
+mkcd() { mkdir -p "$1" && cd "$1"; }
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
@@ -211,3 +215,4 @@ eval "$(fzf --zsh)"
 . "/Users/govindpandey/.deno/env"
 export PATH=$PATH:$HOME/.local/opt/go/bin
 export PATH=$PATH:$HOME/go/bin
+export PATH=/Users/govindpandey/.meteor:$PATH
