@@ -123,6 +123,7 @@ alias todo='node ~/Desktop/coding/cohort/3-week/cli-todo/index.js'
 alias la='ls -a'
 alias tree='tree -I ".git|node_modules" -a .'
 alias nv='NVIM_APPNAME=nvimExample nvim'
+alias npm='pnpm'
 mkcd() { mkdir -p "$1" && cd "$1"; }
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
