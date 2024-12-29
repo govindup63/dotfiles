@@ -13,7 +13,7 @@ keymaps.set("n", "-", "<C-x>")
 keymaps.set("n", "<C-a>", "gg<S-v>G")
 
 --NewLine Keymaps
-keymaps.set("n", "o", "$i<CR><Esc>")
+keymaps.set("n", "o", "$a<CR><Esc>")
 keymaps.set("n", "O", "O<Esc>")
 
 ----tmux keymaps
