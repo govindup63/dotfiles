@@ -124,25 +124,27 @@ alias la='ls -a'
 alias tree='tree -I ".git|node_modules" -a .'
 alias nv='NVIM_APPNAME=nvimExample nvim'
 alias k='kubectl'
-alias utsc='update_tsconfig'
+alias utsc='replace_tsconfig'
 mkcd() { mkdir -p "$1" && cd "$1"; }
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # Function to update tsconfig.json
-update_tsconfig() {
-  local tsconfig="tsconfig.json"
-
-  # Check if tsconfig.json exists in the current directory
-  if [[ -f $tsconfig ]]; then
-    echo "Detected $tsconfig. Updating rootDir and outDir..."
-
-    # Use jq to modify the JSON
-    jq '.compilerOptions.rootDir = "src" | .compilerOptions.outDir = "dist"' $tsconfig > tmp.json && mv tmp.json $tsconfig
-
-    echo "$tsconfig updated successfully!"
+replace_tsconfig() {
+  local dotfiles_dir="$HOME/dotfiles"
+  local tsconfig_file="$dotfiles_dir/tsconfig.json"
+  
+  # Create the src directory if it doesn't exist
+  if [[ ! -d "src" ]]; then
+    mkdir src
+    echo "src directory created."
+  fi
+  
+  # Check if the preconfigured tsconfig.json exists
+  if [[ -f "$tsconfig_file" ]]; then
+    cp "$tsconfig_file" ./tsconfig.json && echo "tsconfig.json configured successfully!"
   else
-    echo "No tsconfig.json found in the current directory."
+    echo "Preconfigured tsconfig.json not found in $dotfiles_dir."
   fi
 }
 
