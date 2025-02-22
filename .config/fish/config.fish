@@ -1,7 +1,18 @@
 if status is-interactive
     # Commands to run in interactive sessions can go here
 end
-alias ls colorls
+alias ls "eza --icons"
+alias l "eza --icons"
+alias ll "eza -lg --icons"
+alias la "eza -lag --icons"
+alias lt "eza -lTg --icons"
+alias lt1 "eza -lTg --level=1 --icons"
+alias lt2 "eza -lTg --level=2 --icons"
+alias lt3 "eza -lTg --level=3 --icons"
+alias lta "eza -lTag --icons"
+alias lta1 "eza -lTag --level=1 --icons"
+alias lta2 "eza -lTag --level=2 --icons"
+alias lta3 "eza -lTag --level=3 --icons"
 alias python python3
 alias :q exit
 alias vi nvim
@@ -12,6 +23,7 @@ alias tree "tree -I '.git|node_modules' -a ."
 alias nv "NVIM_APPNAME=nvimExample nvim"
 alias k kubectl
 alias utsc replace_tsconfig
+
 
 # Function equivalent of mkcd (Fish doesn’t support alias with arguments)
 function mkcd
