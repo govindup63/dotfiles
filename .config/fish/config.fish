@@ -1,6 +1,8 @@
 if status is-interactive
     # Commands to run in interactive sessions can go here
 end
+
+# eza (ls alternative) aliases
 alias ls "eza --icons"
 alias l "eza --icons"
 alias ll "eza -lg --icons"
@@ -13,6 +15,8 @@ alias lta "eza -lTag --icons"
 alias lta1 "eza -lTag --level=1 --icons"
 alias lta2 "eza -lTag --level=2 --icons"
 alias lta3 "eza -lTag --level=3 --icons"
+
+p
 alias python python3
 alias :q exit
 alias vi nvim
