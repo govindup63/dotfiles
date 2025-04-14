@@ -1,6 +1,8 @@
 if status is-interactive
     # Commands to run in interactive sessions can go here
 end
+export PATH="$HOME/.local/share/pnpm:$PATH"
+
 
 # eza (ls alternative) aliases
 alias ls "eza --icons"
@@ -37,3 +39,10 @@ end
 if type -q zoxide
     zoxide init --cmd cd fish | source
 end
+
+# pnpm
+set -gx PNPM_HOME "/Users/govindpandey/Library/pnpm"
+if not string match -q -- $PNPM_HOME $PATH
+  set -gx PATH "$PNPM_HOME" $PATH
+end
+# pnpm end
