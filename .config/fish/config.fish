@@ -41,8 +41,12 @@ if type -q zoxide
 end
 
 # pnpm
-set -gx PNPM_HOME "/Users/govindpandey/Library/pnpm"
+set -gx PNPM_HOME /Users/govindpandey/Library/pnpm
 if not string match -q -- $PNPM_HOME $PATH
-  set -gx PATH "$PNPM_HOME" $PATH
+    set -gx PATH "$PNPM_HOME" $PATH
 end
 # pnpm end
+
+
+set -x GPG_TTY (tty)
+set -x SSH_AUTH_SOCK (gpgconf --list-dirs agent-ssh-socket)
