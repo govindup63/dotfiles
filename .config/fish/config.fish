@@ -31,6 +31,59 @@ alias tf tofu
 alias k kubectl
 alias utsc replace_tsconfig
 
+# git alias
+alias gst "git status"
+alias gcm "git commit -m"
+alias gca "git commit --amend --no-edit"
+alias gco "git checkout"
+alias gcp "git cherry-pick" 
+alias gcf "git commit --fixup"
+alias ga "git add"
+alias gaa "git add --all"
+alias gb "git branch"
+alias gbd "git branch -d"
+alias gbD "git branch -D"
+alias gl "git log"
+alias gp "git push"
+alias gpf "git push --force-with-lease"
+alias gpl "git pull"
+alias grb "git rebase"
+alias grs "git reset"
+alias grh "git reset --hard"
+alias gd "git diff"
+alias gdc "git diff --cached"
+alias gs "git stash"
+alias gsp "git stash pop"
+alias gsl "git stash list"
+
+function gh
+    echo "Git Aliases:"
+    echo "gst  -> git status"
+    echo "gcm  -> git commit -m"
+    echo "gca  -> git commit --amend --no-edit"
+    echo "gco  -> git checkout"
+    echo "gcp  -> git cherry-pick"
+    echo "gcf  -> git commit --fixup"
+    echo "ga   -> git add"
+    echo "gaa  -> git add --all" 
+    echo "gb   -> git branch"
+    echo "gbd  -> git branch -d"
+    echo "gbD  -> git branch -D"
+    echo "gl   -> git log"
+    echo "gp   -> git push"
+    echo "gpf  -> git push --force-with-lease"
+    echo "gpl  -> git pull"
+    echo "grb  -> git rebase"
+    echo "grs  -> git reset"
+    echo "grh  -> git reset --hard"
+    echo "gd   -> git diff"
+    echo "gdc  -> git diff --cached"
+    echo "gs   -> git stash"
+    echo "gsp  -> git stash pop"
+    echo "gsl  -> git stash list"
+end
+
+
 
 # Function equivalent of mkcd (Fish doesn’t support alias with arguments)
 function mkcd
