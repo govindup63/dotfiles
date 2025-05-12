@@ -258,3 +258,10 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+
+. "$HOME/.local/bin/env"
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /opt/homebrew/bin/tofu tofu
+
+complete -o nospace -C /opt/homebrew/bin/terraform terraform

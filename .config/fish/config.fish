@@ -27,6 +27,7 @@ alias todo "node ~/Desktop/coding/cohort/3-week/cli-todo/index.js"
 alias la "ls -a"
 alias tree "tree -I '.git|node_modules' -a ."
 alias nv "NVIM_APPNAME=nvimExample nvim"
+alias tf tofu
 alias k kubectl
 alias utsc replace_tsconfig
 
