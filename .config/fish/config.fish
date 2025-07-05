@@ -107,3 +107,4 @@ end
 set -x GPG_TTY (tty)
 set -x SSH_AUTH_SOCK (gpgconf --list-dirs agent-ssh-socket)
 set -gx PATH /Users/govindpandey/.cargo/bin $PATH
+direnv hook fish | source
