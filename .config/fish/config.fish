@@ -56,6 +56,7 @@ alias gdc "git diff --cached"
 alias gs "git stash"
 alias gsp "git stash pop"
 alias gsl "git stash list"
+alias ap ansible-playbook
 
 function gh
     echo "Git Aliases:"
@@ -107,4 +108,5 @@ end
 set -x GPG_TTY (tty)
 set -x SSH_AUTH_SOCK (gpgconf --list-dirs agent-ssh-socket)
 set -gx PATH /Users/govindpandey/.cargo/bin $PATH
+set -gx PATH $HOME/.config/emacs/bin $PATH
 direnv hook fish | source
