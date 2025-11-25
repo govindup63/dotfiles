@@ -22,7 +22,7 @@ alias lta3 "eza -lTag --level=3 --icons"
 alias python python3
 alias :q exit
 alias vi nvim
-alias c clear
+alias c "clear -x"
 alias todo "node ~/Desktop/coding/cohort/3-week/cli-todo/index.js"
 alias la "ls -a"
 alias tree "tree -I '.git|node_modules' -a ."
@@ -113,6 +113,9 @@ set -gx PATH /opt/homebrew/share/google-cloud-sdk/bin $PATH
 
 set -Ux PYENV_ROOT $HOME/.pyenv
 set -Ux PATH $PYENV_ROOT/bin $PATH
+#
+# Add Go binaries to PATH
+set -gx PATH $PATH (go env GOPATH)/bin
 
 status --is-interactive; and source (pyenv init -|psub)
 direnv hook fish | source
