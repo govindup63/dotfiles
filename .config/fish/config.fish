@@ -3,7 +3,6 @@ if status is-interactive
 end
 export PATH="$HOME/.local/share/pnpm:$PATH"
 
-
 # eza (ls alternative) aliases
 alias ls "eza --icons"
 alias l "eza --icons"
@@ -17,7 +16,6 @@ alias lta "eza -lTag --icons"
 alias lta1 "eza -lTag --level=1 --icons"
 alias lta2 "eza -lTag --level=2 --icons"
 alias lta3 "eza -lTag --level=3 --icons"
-
 
 alias python python3
 alias :q exit
@@ -86,8 +84,6 @@ function gh
     echo "gsl  -> git stash list"
 end
 
-
-
 # Function equivalent of mkcd (Fish doesn’t support alias with arguments)
 function mkcd
     mkdir -p $argv[1]; and cd $argv[1]
@@ -104,7 +100,6 @@ if not string match -q -- $PNPM_HOME $PATH
 end
 # pnpm end
 
-
 set -x GPG_TTY (tty)
 set -x SSH_AUTH_SOCK (gpgconf --list-dirs agent-ssh-socket)
 set -gx PATH /Users/govindpandey/.cargo/bin $PATH
@@ -119,3 +114,11 @@ set -gx PATH $PATH (go env GOPATH)/bin
 
 status --is-interactive; and source (pyenv init -|psub)
 direnv hook fish | source
+
+# bun
+set --export BUN_INSTALL "$HOME/.bun"
+set --export PATH $BUN_INSTALL/bin $PATH
+
+# ~/.config/fish/config.fish
+
+starship init fish | source
