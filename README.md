@@ -12,7 +12,6 @@ My personal config bundle for macOS and Linux-ish workflows. Think of it as my t
 - Starship prompt config
 - Htop and Neofetch configs
 - Zsh RC
-- Kanata keyboard remap + launchd plist
 - OpenCode CLI config (local tooling)
 
 ## How this works (symlinks, not magic)
@@ -30,20 +29,6 @@ stow --target="$HOME" .config
 
 # Link zshrc explicitly (not inside .config)
 ln -s "$PWD/.zshrc" "$HOME/.zshrc"
-```
-
-### Kanata (macOS)
-
-The launchd plist uses absolute paths. Update them before loading.
-
-- Edit `kanata/com.govind.kanata.plist` to match your username and paths.
-- Ensure `kanata.kbd` ends up at `~/.config/kanata/kanata.kbd` (or update the plist).
-
-Load it after edits:
-
-```bash
-cp "kanata/com.govind.kanata.plist" "$HOME/Library/LaunchAgents/"
-launchctl load "$HOME/Library/LaunchAgents/com.govind.kanata.plist"
 ```
 
 ### Removing unwanted stuff
@@ -88,9 +73,6 @@ Output of `tree -a -I ".git|node_modules|plugins|.env"` (trimmed for readability
 │   ├── wezterm
 │   │   └── wezterm.lua
 │   └── starship.toml
-├── kanata
-│   ├── com.govind.kanata.plist
-│   └── kanata.kbd
 ├── .gitignore
 ├── .zshrc
 ├── README.md
