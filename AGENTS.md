@@ -1,0 +1,1 @@
+- Always restructure the file tree in readme.md if you delete some files
