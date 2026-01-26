@@ -29,6 +29,8 @@ alias tf terraform
 alias k kubectl
 alias utsc replace_tsconfig
 
+alias oc opencode
+
 # git alias
 alias gst "git status"
 alias gcm "git commit -m"
@@ -119,6 +121,45 @@ direnv hook fish | source
 set --export BUN_INSTALL "$HOME/.bun"
 set --export PATH $BUN_INSTALL/bin $PATH
 
+#kubecolor
+# adds alias for "kubectl" to "kubecolor" with completions
+function kubectl --wraps kubectl
+    command kubecolor $argv
+end
+
+# adds alias for "k" to "kubecolor" with completions
+function k --wraps kubectl
+    command kubecolor $argv
+end
+
+# reuse "kubectl" completions on "kubecolor"
+function kubecolor --wraps kubectl
+    command kubecolor $argv
+end
+
+# This needs to be added before "function ... --wraps kubectl"
+kubectl completion fish | source
+
 # ~/.config/fish/config.fish
 
 starship init fish | source
+set -gx GOPROXY https://proxy.golang.org,direct
+
+# opencode
+fish_add_path /Users/govindpandey/.opencode/bin
+
+function load_dotenv --argument filename
+    if test -f $filename
+        for line in (string split \n (cat $filename))
+            set line (string trim $line)
+            if test -z "$line"; or string match -rq '^#' $line
+                continue
+            end
+            set key (string split -m1 '=' -- $line)[1]
+            set value (string split -m1 '=' -- $line)[2]
+            set -gx $key $value
+        end
+    end
+end
+
+load_dotenv ~/.config/opencode/.env
