@@ -56,6 +56,7 @@ alias gdc "git diff --cached"
 alias gs "git stash"
 alias gsp "git stash pop"
 alias gsl "git stash list"
+alias g- "git switch -"
 alias ap ansible-playbook
 
 function ghl
@@ -84,6 +85,7 @@ function ghl
     echo "gs   -> git stash"
     echo "gsp  -> git stash pop"
     echo "gsl  -> git stash list"
+    echo "g-   -> git switch -"
 end
 
 # Function equivalent of mkcd (Fish doesn’t support alias with arguments)
