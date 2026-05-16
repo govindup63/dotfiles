@@ -58,7 +58,7 @@ alias gsp "git stash pop"
 alias gsl "git stash list"
 alias ap ansible-playbook
 
-function gh
+function ghl
     echo "Git Aliases:"
     echo "gst  -> git status"
     echo "gcm  -> git commit -m"
@@ -141,8 +141,6 @@ end
 kubectl completion fish | source
 
 # ~/.config/fish/config.fish
-
-starship init fish | source
 set -gx GOPROXY https://proxy.golang.org,direct
 
 # opencode
@@ -163,3 +161,18 @@ function load_dotenv --argument filename
 end
 
 load_dotenv ~/.config/opencode/.env
+
+set -l fish_secrets_file "$HOME/dotfiles/.config/fish/secrets.fish"
+if test -f $fish_secrets_file
+    source $fish_secrets_file
+end
+
+if status is-interactive
+    # Treat ESC [ I (CSI I) as Tab completion
+    bind \e\[I complete
+    # Treat ESC [ Z as shift-tab completion search
+    bind \e\[Z complete-and-search
+end
+
+# Add ~/.local/bin to PATH
+fish_add_path $HOME/.local/bin
