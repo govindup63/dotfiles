@@ -17,6 +17,14 @@
         "/Users/govindpandey/Desktop/coding/mcp/base64/index.ts"
       ]
     },
+    "firebase-token": {
+      "type": "local",
+      "command": [
+        "npx",
+        "tsx",
+        "/Users/govindpandey/Desktop/coding/temp/firebase-token-mcp/src/index.ts"
+      ]
+    },
     "github": {
       "type": "remote",
       "url": "https://api.githubcopilot.com/mcp/",
